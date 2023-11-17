@@ -20,8 +20,10 @@ clean-targets:
 models:
   snowflake_workshop:
     staging:
-      materialized: view
-      snowflake_warehouse: pc_dbt_wh
+      jaffle_shop:
+        materialized: view
+        snowflake_warehouse: pc_dbt_wh
     marts:
-      materialized: table
-      snowflake_warehouse: pc_dbt_wh_large
+      core:
+        materialized: table
+        snowflake_warehouse: pc_dbt_wh_large
