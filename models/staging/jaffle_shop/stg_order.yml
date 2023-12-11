@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: stg_orders_dub
+    tests:
+    - dbt_utils.unique_combination_of_columns:
+        combination_of_columns:
+          - order_id
+          - customer_id
+    columns:
+      - name: status
+        tests:
+          - dbt_utils.not_accepted_values:
+              values: ['completed']
